@@ -7,10 +7,19 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { HomeComponent } from './core/home/home.component';
 import { OpenDropdownDirective } from './directives/open-dropdown.directive';
+import { MemoryGamePageComponent } from './projects/memory-game/memory-game-page/memory-game-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, FooterComponent, HomeComponent, OpenDropdownDirective],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    FooterComponent,
+    HomeComponent,
+    OpenDropdownDirective,
+    MemoryGamePageComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

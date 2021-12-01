@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="game">
+    <h1>Igra memorije</h1>
+    <div>
+      <form [formGroup]="configForm">
+        <div class="form-group">
+          <label for="size">Velicina</label>
+          <select
+            class="form-control"
+            id="size"
+            formControlName="size"
+            (change)="sizeChanged()"
+          >
+            <option [value]="3">3x3</option>
+            <option [value]="4">4x4</option>
+            <option [value]="5">5x5</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="level">Nivo Tezine</label>
+          <select class="form-control" id="level" formControlName="level">
+            <option [value]="5000">Lak</option>
+            <option [value]="3000">Normalan</option>
+            <option [value]="2000">Tezak</option>
+          </select>
+        </div>
+      </form>
+    </div>
+    <div>
+      <form>
+        <div>
+          <div
+            class="filed-wrapper"
+            *ngFor="let value of startGrid; let i = index"
+          >
+            <input
+              type="text"
+              [name]="i.toString()"
+              [(ngModel)]="gameForm[i]"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div>
+      <button *ngIf="!isTimeToCheck" (click)="startGame()">start</button>
+      <button *ngIf="isTimeToCheck" (click)="checkValues()">check</button>
+    </div>
+  </div>
+</div>

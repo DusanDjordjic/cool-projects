@@ -16,9 +16,14 @@ nav {
       @include firstNoMargLeft;
       @include lastNoMargRight;
       transition: all 0.3s;
-      &.active,
-      &:hover {
+      &.active {
         @include highlightText;
+      }
+      a {
+        transition: all 0.3s;
+        &:hover {
+          @include highlightText;
+        }
       }
     }
     .logo {
@@ -32,6 +37,34 @@ nav {
     }
     .icon {
       @include icon;
+    }
+    .dropdown {
+      position: relative;
+      .dropdown-box {
+        padding: $padding-lg;
+
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        position: absolute;
+        background-color: $color-dark;
+        border-right: 1px solid $color-main;
+        border-bottom: 1px solid $color-main;
+        border-left: 1px solid $color-main;
+        top: 38px;
+        left: -5px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        a {
+          display: inline-block;
+          margin-right: $margin-lg;
+          margin-bottom: $margin-normal;
+          white-space: nowrap;
+        }
+        display: none;
+        &.active {
+          display: grid;
+        }
+      }
     }
   }
 }

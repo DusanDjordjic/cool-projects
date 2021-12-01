@@ -8,7 +8,28 @@
     margin-right: 0;
   }
 }
-
+@mixin containerLayount() {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 $padding-lg;
+  }
+  @include md() {
+    .container {
+      width: 700px;
+    }
+  }
+  @include lg {
+    .container {
+      width: 900px;
+    }
+  }
+  @include xl {
+    .container {
+      width: 1180px;
+    }
+  }
+}
 @mixin g-4() {
   display: grid;
   @include md() {
@@ -20,6 +41,17 @@
   @include xl {
     grid-template-columns: repeat(4, 1fr);
   }
+  grid-template-columns: repeat(1, 1fr);
+}
+@mixin g-3() {
+  display: grid;
+  @include md() {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   grid-template-columns: repeat(1, 1fr);
 }
 @mixin highlightText() {

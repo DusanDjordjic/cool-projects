@@ -1,0 +1,27 @@
+@import "src/assets/styles/vars";
+@import "src/assets/styles/mixins";
+
+@include containerLayount;
+.projects-section {
+  h1 {
+    margin: $margin-lg * 2 0;
+    text-align: center;
+  }
+  .projects-container {
+    @include g-3;
+    .project {
+      aspect-ratio: 3 / 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .project-background-orange {
+      background-color: $color-main;
+      color: $color-dark;
+    }
+    .project-background-dark {
+      background-color: $color-dark;
+      color: $color-text;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@mixin firstNoMargLeft() {
+  &:first-of-type {
+    margin-left: 0;
+  }
+}
+@mixin lastNoMargRight() {
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+@mixin g-4() {
+  display: grid;
+  @include md() {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include xl {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  grid-template-columns: repeat(1, 1fr);
+}
+@mixin highlightText() {
+  color: $color-main;
+}
+@mixin icon() {
+  font-size: $font-size-lg;
+}
+@mixin xl() {
+  @media only screen and (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin lg() {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+@mixin md() {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin sm() {
+  @media only screen and (min-width: 568px) {
+    @content;
+  }
+}

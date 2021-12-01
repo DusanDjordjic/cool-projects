@@ -1,0 +1,46 @@
+@import "src/assets/styles/vars";
+@import "src/assets/styles/mixins";
+
+footer {
+  background-color: $color-dark;
+  color: $color-text;
+  padding: $padding-normal $padding-lg;
+  .g-4 {
+    @include g-4;
+  }
+  div {
+    padding: $padding-lg;
+    text-align: justify;
+    .logo {
+      span {
+        @include highlightText;
+      }
+    }
+
+    .col-header {
+      font-size: $font-size-md;
+      margin-bottom: $margin-md;
+    }
+    .col-item {
+      margin-bottom: $margin-normal;
+      color: $color-text-gray;
+    }
+    .link {
+      a {
+        &:hover {
+          @include highlightText;
+        }
+      }
+    }
+  }
+  .copyright {
+    text-align: center;
+    a {
+      text-decoration: underline;
+    }
+    span,
+    a {
+      @include highlightText;
+    }
+  }
+}

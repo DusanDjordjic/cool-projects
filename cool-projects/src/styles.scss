@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import "src/assets/styles/vars";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: $color-bg;
+  color: $color-dark;
+  font-family: $font-family-main;
+  font-weight: 500;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}

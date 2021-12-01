@@ -1,0 +1,37 @@
+@import "src/assets/styles/vars";
+@import "src/assets/styles/mixins";
+
+nav {
+  background-color: $color-dark;
+  color: $color-text;
+  padding: $padding-normal $padding-lg;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .link-group {
+    display: flex;
+    align-items: center;
+    .link-group-item {
+      margin: 0 $margin-normal;
+      @include firstNoMargLeft;
+      @include lastNoMargRight;
+      transition: all 0.3s;
+      &.active,
+      &:hover {
+        @include highlightText;
+      }
+    }
+    .logo {
+      font-size: $font-size-md;
+      span {
+        @include highlightText;
+      }
+      &:hover {
+        color: $color-text;
+      }
+    }
+    .icon {
+      @include icon;
+    }
+  }
+}

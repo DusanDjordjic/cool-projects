@@ -68,15 +68,15 @@ export class MemoryGamePageComponent implements OnInit {
   startGame() {
     // Treba da se prikaze 'check' dugme
     this.gameState = GameStateEnum.Start;
-    console.log(this.gameState);
+
     // Popunjavamo polja
     this.fillFields();
     setTimeout(() => {
       /**
        * updateGameFormSize popuni sve elemente sa null
        * tako da mozemo da iskoristimo kada brisemo elemente
-       */ this.gameState = GameStateEnum.Check;
-      console.log(this.gameState);
+       */
+      this.gameState = GameStateEnum.Check;
       this.updateGameFormSize();
     }, this.configForm.value.level);
   }

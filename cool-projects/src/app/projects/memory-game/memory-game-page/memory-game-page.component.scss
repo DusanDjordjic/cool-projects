@@ -1,0 +1,102 @@
+@import "src/assets/styles/vars";
+@import "src/assets/styles/mixins";
+@include containerLayount;
+.game {
+  h1 {
+    text-align: center;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .config-form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    .form-group {
+      &:first-of-type {
+        margin-right: 5rem;
+      }
+      .form-control {
+        padding: 0.5rem 1rem;
+        border: 1px solid #aaa;
+        background-color: transparent;
+        border-radius: 0.5rem;
+        &:focus {
+          outline: none;
+          border: apx solid #777;
+        }
+        min-width: 200px;
+      }
+      label {
+        display: block;
+      }
+    }
+  }
+}
+.success {
+  background-color: rgb(115, 216, 115);
+}
+.failure {
+  background-color: rgb(216, 115, 115);
+}
+.center-children {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.fields-wrapper {
+  display: inline-grid;
+  margin: 0 auto;
+  &.g-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &.g-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &.g-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  &.g-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .field-wrapper {
+    input {
+      display: inline-block;
+      text-align: center;
+      font-size: 32px;
+      margin: 1rem;
+      width: 100px;
+      height: 100px;
+      border-radius: 0.5rem;
+      border: 1px solid #aaa;
+      color: #777;
+      &:focus {
+        outline: none;
+        border-color: #777;
+      }
+    }
+  }
+}
+.buttons-wrapper {
+  width: 100%;
+  margin: 1rem 0;
+  button {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 100rem;
+    background-color: $color-dark;
+    border: 3px solid $color-main;
+    color: $color-text;
+    font-size: 1.5rem;
+  }
+}
+.logs-wrapper {
+  width: 100%;
+  text-align: center;
+  p {
+    margin: 0.5rem 0;
+  }
+}

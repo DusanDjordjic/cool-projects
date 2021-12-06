@@ -1,0 +1,32 @@
+<div class="background">
+  <div class="container">
+    <div class="calculator-grid">
+      <div class="output">
+        <div class="previous-operand" #previousOperand>
+          {{ calculator.previousOperand }}
+        </div>
+        <div class="current-operand" #currentOperand>
+          {{ calculator.currentOperand }}
+        </div>
+      </div>
+      <button class="span-two" (click)="clear()">AC</button>
+      <button (click)="delete()">DEL</button>
+      <button (click)="chooseOperation('÷')">÷</button>
+      <button (click)="addNumber(1)">1</button>
+      <button (click)="addNumber(2)">2</button>
+      <button (click)="addNumber(3)">3</button>
+      <button (click)="chooseOperation('*')">*</button>
+      <button (click)="addNumber(4)">4</button>
+      <button (click)="addNumber(5)">5</button>
+      <button (click)="addNumber(6)">6</button>
+      <button (click)="chooseOperation('+')">+</button>
+      <button (click)="addNumber(7)">7</button>
+      <button (click)="addNumber(8)">8</button>
+      <button (click)="addNumber(9)">9</button>
+      <button (click)="chooseOperation('-')">-</button>
+      <button (click)="addNumber('.')">.</button>
+      <button (click)="addNumber(0)">0</button>
+      <button class="span-two" (click)="compute()">=</button>
+    </div>
+  </div>
+</div>

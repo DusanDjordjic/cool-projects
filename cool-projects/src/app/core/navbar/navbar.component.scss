@@ -40,6 +40,10 @@ nav {
     }
     .dropdown {
       position: relative;
+      cursor: pointer;
+      i {
+        margin-left: $margin-normal;
+      }
       .dropdown-box {
         padding: $padding-lg;
 
@@ -50,7 +54,7 @@ nav {
         border-right: 1px solid $color-main;
         border-bottom: 1px solid $color-main;
         border-left: 1px solid $color-main;
-        top: 38px;
+        top: 24px;
         left: -5px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);

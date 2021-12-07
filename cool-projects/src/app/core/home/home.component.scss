@@ -3,8 +3,9 @@
 
 @include containerLayount;
 .projects-section {
+  margin: $margin-lg * 2 0;
   h1 {
-    margin: $margin-lg * 2 0;
+    margin: 0 0 $margin-lg * 2 0;
     text-align: center;
   }
   .projects-container {

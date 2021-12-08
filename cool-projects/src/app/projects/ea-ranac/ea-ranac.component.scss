@@ -1,3 +1,56 @@
 @import "src/assets/styles/vars";
 @import "src/assets/styles/mixins";
 @include containerLayount;
+.container {
+  margin: 2rem auto;
+}
+.add-item-btn {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 100rem;
+  background-color: $color-primary;
+  border: 1px solid $color-dark;
+  color: $color-dark;
+  margin: $margin-normal 0;
+}
+.button-wrapper {
+  text-align: center;
+  .submit-btn {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 100rem;
+    background-color: $color-primary;
+    border: 1px solid $color-dark;
+    color: $color-dark;
+    margin: $margin-normal 0;
+  }
+}
+.items-wrapper {
+  @include g-3;
+  gap: $font-size-normal;
+  .item-wrapper {
+    padding: $padding-normal;
+    border-radius: 1rem;
+    .button-wrapper {
+      button {
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        border-radius: 100rem;
+        background-color: $color-danger;
+        border: 1px solid $color-dark;
+        color: $color-dark;
+      }
+    }
+
+    .form-group {
+      margin-bottom: $margin-normal;
+      display: flex;
+      label {
+        width: 30%;
+      }
+      input {
+        width: 70%;
+      }
+    }
+  }
+}

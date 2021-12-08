@@ -2,37 +2,54 @@
   <form [formGroup]="bagForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="maxSize">Kapacitet Ranca</label>
-      <input type="number" id="maxSize" formControlName="maxSize" />
+      <input
+        type="number"
+        id="maxSize"
+        formControlName="maxSize"
+        style="margin-left: 1rem"
+      />
     </div>
-    <button type="button" (click)="addItem()">Dodaj predmet</button>
-    <div formArrayName="items">
+    <button class="add-item-btn" type="button" (click)="addItem()">
+      Dodaj predmet
+    </button>
+    <div formArrayName="items" class="items-wrapper">
       <div
         class="form-group"
-        *ngFor="let item of bagForm.value.items; let i = index"
-        [formGroupName]="i"
+        *ngFor="let item of items.controls; let i = index"
+        [formGroup]="getItemFromGroupByIndex(i)"
+        class="item-wrapper"
       >
         <div>
-          <div>
-            <label [for]="'name' + i">Ime</label>
+          <div class="form-group">
+            <label [for]="'name' + i">Ime:</label>
             <input type="text" [id]="'name' + i" formControlName="name" />
           </div>
-          <div>
-            <label [for]="'value' + i">Vrednost</label>
+          <div class="form-group">
+            <label [for]="'value' + i">Vrednost:</label>
             <input type="number" [id]="'value' + i" formControlName="value" />
           </div>
-          <div>
-            <label [for]="'weight' + i">Tezina</label>
+          <div class="form-group">
+            <label [for]="'weight' + i">Tezina:</label>
             <input type="number" [id]="'weight' + i" formControlName="weight" />
           </div>
-          <div>
+          <div class="form-group">
+            <label [for]="'maxCount' + i">Max Kol:</label>
+            <input
+              type="number"
+              [id]="'maxCount' + i"
+              formControlName="maxCount"
+            />
+          </div>
+          <div class="button-wrapper">
             <button type="button" (click)="removeItemAtIndex(i)">
-              Remove item
+              Izbaci predmet
             </button>
           </div>
-          <hr />
         </div>
       </div>
     </div>
-    <button type="submit">Izaberi predmete</button>
+    <div class="button-wrapper">
+      <button class="submit-btn" type="submit">Izaberi predmete</button>
+    </div>
   </form>
 </div>

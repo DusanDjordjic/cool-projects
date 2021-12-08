@@ -10,6 +10,7 @@ import { OpenDropdownDirective } from './directives/open-dropdown.directive';
 import { MemoryGamePageComponent } from './projects/memory-game/memory-game-page/memory-game-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalculatorComponent } from './projects/calculator/calculator.component';
+import { EaRanacComponent } from './projects/ea-ranac/ea-ranac.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CalculatorComponent } from './projects/calculator/calculator.component'
     OpenDropdownDirective,
     MemoryGamePageComponent,
     CalculatorComponent,
+    EaRanacComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
   providers: [],
